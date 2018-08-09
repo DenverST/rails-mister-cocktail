@@ -1,14 +1,16 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <a href="cocktails" class="navbar-wagon-brand">
+<!--   <a href="cocktails" class="navbar-wagon-brand">
     <%= image_tag "cocktail.jpeg", alt: 'logo' %>
-  </a>
+  </a> -->
+  <%= link_to image_tag('cocktail.jpeg', alt: 'logo'), cocktails_path, class: "navbar-wagon-brand" %>
   <h2>Shaken and Stirred</h2>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-
-    <a href="cocktails/new" class="navbar-wagon-item navbar-wagon-link">New</a>
+    <%= link_to image_tag('shot.jpeg', alt: 'logo'), doses_path, class: "navbar-wagon-brand" %>
+    <%= link_to image_tag('shaker.jpeg', alt: 'logo'), new_cocktail_path, class: "navbar-wagon-brand" %>
+<!--     <a href="/new" class="navbar-wagon-item navbar-wagon-link">New</a> -->
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
