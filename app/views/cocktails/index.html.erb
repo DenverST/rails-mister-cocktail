@@ -1,6 +1,9 @@
 <% @hello = ["one.jpeg", "two.jpeg", "three.jpeg", "four.jpeg", "five.jpeg", "six.jpeg", "seven.jpeg", "eight.jpeg", "nine.jpeg", "ten.jpeg", "eleven.jpeg", "twelve.jpeg", "thirteen.jpeg" ] %>
 
 <% @heads = ["DenverST", "forresty", "Filipe-p", "ssaunier", "kentokedo", "deepneuralai", "Dcarg"] %>
+<% @messages = ["Summer Fun", "Refresher", "Fruity Fun", "Citrus Burst", "Modern Classic", "Sophisticated Style", "Old Fashioned Favourite"] %>
+<% @bars = ["Bob's Bar", "Bricka", "Corner Hotel", "Steve's", "Imperial Rooftop", "Richmond Hotel", "Stone Hotel", "Varnish"] %>
+
 
 <div class="who">
     <div class="container">
@@ -9,10 +12,10 @@
           <% image = asset_url(@hello.sample) %>
           <div class="col-xs-12 col-sm-4">
             <div class="card" style="<%= 'background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(\'' + image + '\')' %>">
-              <div class="card-category">Popular</div>
+              <div class="card-category"><%= @bars.sample %></div>
               <div class="card-description">
                 <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-                <p>Drink it now</p>
+                <p><%= @messages.sample %></p>
               </div>
               <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/<%= @heads.sample %>">
     <!--           <a class="card-link" href="#" ></a> -->
