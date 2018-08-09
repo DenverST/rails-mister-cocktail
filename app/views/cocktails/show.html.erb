@@ -1,19 +1,22 @@
+<div class="who">
+  <div class="when">
 
+    <%= @cocktail.name %>
 
-<%= @cocktail.name %>
+    <ul>
+    <% @cocktail.doses.each do |dose| %>
+      <li>
+        <%= dose.description %>
+        <%= dose.ingredient.name %>
 
-<ul>
-<% @cocktail.doses.each do |dose| %>
-  <li>
-    <%= dose.description %>
-    <%= dose.ingredient.name %>
+      </li>
+    <% end %>
+    </ul>
 
-  </li>
-<% end %>
-</ul>
+    <%=  link_to "Add Dose", new_cocktail_dose_path(@cocktail) %>
 
-<%=  link_to "Add Dose", new_cocktail_dose_path(@cocktail) %>
-
-<%= link_to "Delete", cocktail_path(@cocktail),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
+    <%= link_to "Delete", cocktail_path(@cocktail),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+  </div>
+</div>

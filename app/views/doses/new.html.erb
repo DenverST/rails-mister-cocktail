@@ -1,18 +1,21 @@
+<div class="who">
+  <div class="when">
+    <h3>Let's add dose for <%= @cocktail.name %></h3>
 
-<h3>Let's add dose for <%= @cocktail.name %></h3>
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <% if @dose.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% @dose.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <% if @dose.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @dose.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= f.input :description %>
-  <%= f.association :ingredient  %>
-  <%= f.submit "Commit!", class: "btn btn-primary" %>
-<% end %>
+      <%= f.input :description %>
+      <%= f.association :ingredient  %>
+      <%= f.submit "Commit!", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
