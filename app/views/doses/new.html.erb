@@ -1,6 +1,6 @@
 <div class="who">
   <div class="when">
-    <h3>Let's add dose for <%= @cocktail.name %></h3>
+    <h3>Let's add a dose for <%= @cocktail.name %></h3>
 
     <%= simple_form_for [@cocktail, @dose] do |f| %>
       <% if @dose.errors.any? %>
@@ -15,7 +15,7 @@
 
       <%= f.input :description %>
       <%= f.association :ingredient  %>
-      <%= f.submit "Commit!", class: "btn btn-primary" %>
+      <%= f.submit "Add", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
