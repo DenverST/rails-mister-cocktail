@@ -1,22 +1,35 @@
+<% @hello = ["one.jpeg", "two.jpeg", "three.jpeg", "four.jpeg", "five.jpeg", "six.jpeg", "seven.jpeg", "eight.jpeg", "nine.jpeg", "ten.jpeg", "eleven.jpeg", "twelve.jpeg", "thirteen.jpeg" ] %>
+<% image = asset_url(@hello.sample) %>
+
 <div class="who">
   <div class="when">
+    <div class="how">
+      <h1>
+      <%= @cocktail.name %>
+      </h1>
+    </div>
 
-    <%= @cocktail.name %>
+    <div class="why" style="<%= 'background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(\'' + image + '\')' %>">
 
-    <ul>
-    <% @cocktail.doses.each do |dose| %>
-      <li>
-        <%= dose.description %>
-        <%= dose.ingredient.name %>
+    </div>
+    <div class="how">
+      <ul id="otis">
+      <% @cocktail.doses.each do |dose| %>
+        <li>
+          <%= dose.description %>
+          <%= dose.ingredient.name %>
 
-      </li>
-    <% end %>
-    </ul>
+        </li>
+      <% end %>
+        <li>
+          <%=  link_to "Add Dose", new_cocktail_dose_path(@cocktail) %>
+        </li>
 
-    <%=  link_to "Add Dose", new_cocktail_dose_path(@cocktail) %>
+      </ul>
 
-    <%= link_to "Delete", cocktail_path(@cocktail),
-          method: :delete,
-          data: { confirm: "Are you sure?" } %>
+      <%= link_to "Delete", cocktail_path(@cocktail),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+    </div>
   </div>
 </div>
