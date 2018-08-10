@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #FCFAF9;
 }
 
 #right {
@@ -21,4 +22,27 @@
   padding: 10px;
   padding-left: 120px;
   padding-right: 120px;
+  text-align: center;
+}
+
+#right li #fav {
+  color: #BBCDE5;
+}
+
+#right li p {
+  color: #A8201A;
+  font-family: 'Ranga', cursive;
+  font-size: 25px;
+}
+
+#right li p:hover {
+ color: #007EA7;
+}
+
+#right li #fav:hover {
+  color: #007EA7;
+}
+
+h3 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }

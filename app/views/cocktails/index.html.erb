@@ -9,17 +9,20 @@
   <ul id="right">
     <li>
       <%= link_to bars_path do%>
-        <i class="fas fa-bars fa-3x"></i>
+        <i class="fas fa-bars fa-3x" id="fav"></i>
+        <p>List Bars</p>
       <% end %>
     </li>
     <li>
       <%= link_to new_cocktail_path do%>
-        <i class="fas fa-glass-martini fa-3x"></i>
+        <i class="fas fa-glass-martini fa-3x" id="fav"></i>
+        <p>Add Cocktail</p>
       <% end %>
     </li>
     <li>
       <%= link_to new_bar_path do%>
-        <i class="far fa-file-alt fa-3x"></i>
+        <i class="far fa-file-alt fa-3x" id="fav"></i>
+        <p>Add Bar</p>
       <% end %>
     </li>
   </ul>
