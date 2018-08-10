@@ -1,10 +1,35 @@
 <% @hello = ["one.jpeg", "two.jpeg", "three.jpeg", "four.jpeg", "five.jpeg", "six.jpeg", "seven.jpeg", "eight.jpeg", "nine.jpeg", "ten.jpeg", "eleven.jpeg", "twelve.jpeg", "thirteen.jpeg", "fourteen.jpeg" ] %>
 
-<div class="who">
+<div class="banner">
+  <%= cl_image_tag("bannerthree",
+        width: 1300, height: 400, crop: :fill) %>
+</div>
+
+<div class="links">
+  <ul id="right">
+    <li>
+      <%= link_to bars_path do%>
+        <i class="fas fa-bars fa-3x"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to new_cocktail_path do%>
+        <i class="fas fa-glass-martini fa-3x"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to new_bar_path do%>
+        <i class="far fa-file-alt fa-3x"></i>
+      <% end %>
+    </li>
+  </ul>
+</div>
+
+
+<div class="whono">
     <div class="container">
       <div class="row">
         <% @cocktails.each do |cocktail|  %>
-          <% image = asset_url(@hello.sample) %>
           <div class="col-xs-12 col-sm-4">
             <div class="card" style="<%= 'background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(\'' + cl_image_path(cocktail.photo) + '\')' %>">
               <div class="card-category"><%= link_to cocktail.bar.name, bar_path(cocktail.bar) %></div>

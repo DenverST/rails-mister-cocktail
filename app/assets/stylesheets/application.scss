@@ -14,6 +14,9 @@
 @import "components/index";
 @import "pages/index";
 
+@import "bars";
+@import "cocktails";
+
 
 .who {
   height: 100vh;
@@ -22,6 +25,14 @@
   align-items: center;
   background-image: url('https://source.unsplash.com/random');
   background-size: cover;
+}
+
+.whono {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(240, 240, 240, .8);
 }
 
 .why {

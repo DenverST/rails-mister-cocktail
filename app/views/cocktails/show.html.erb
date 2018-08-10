@@ -4,6 +4,10 @@
       <h1>
       <%= @cocktail.name %>
       </h1>
+      <h4> @</h4>
+      <h3>
+        <%= link_to @cocktail.bar.name, bar_path(@cocktail.bar) %>
+      </h3>
 
     <div class="cocktail-image">
       <%= cl_image_tag(@cocktail.photo,
