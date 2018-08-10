@@ -10,7 +10,7 @@
           <ul id="otis">
             <% bar.cocktails.each do |cocktail|  %>
             <li>
-              <p> <%= cocktail.name %></p>
+              <p> <%= link_to cocktail.name, cocktail_path(cocktail) %></p>
             </li>
             <% end %>
           </ul>

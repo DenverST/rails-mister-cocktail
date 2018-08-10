@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_10_013109) do
+ActiveRecord::Schema.define(version: 2018_08_10_032757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_08_10_013109) do
     t.string "catch_phrase"
     t.integer "price"
     t.bigint "bar_id"
+    t.string "photo"
     t.index ["bar_id"], name: "index_cocktails_on_bar_id"
   end
 

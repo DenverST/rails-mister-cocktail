@@ -7,7 +7,7 @@
       <% @bar.cocktails.each do |cocktail| %>
         <li>
           <h4>
-            <%= cocktail.name %>
+            <%= link_to cocktail.name, cocktail_path(cocktail) %>
           </h4>
           <ul>
             <% cocktail.doses.each do |dose| %>
@@ -24,7 +24,8 @@
         </li>
 
       </ul>
-      <%= link_to "Go Back", bars_path %>
+      <%= link_to "See other bars", bars_path %>
+      <%= link_to "Return home", cocktails_path %>
     </div>
   </div>
 </div>

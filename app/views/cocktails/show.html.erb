@@ -1,18 +1,15 @@
-<% @hello = ["one.jpeg", "two.jpeg", "three.jpeg", "four.jpeg", "five.jpeg", "six.jpeg", "seven.jpeg", "eight.jpeg", "nine.jpeg", "ten.jpeg", "eleven.jpeg", "twelve.jpeg", "thirteen.jpeg" ] %>
-<% image = asset_url(@hello.sample) %>
-
 <div class="who">
   <div class="when">
     <div class="how">
       <h1>
       <%= @cocktail.name %>
       </h1>
-    </div>
 
-    <div class="why" style="<%= 'background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(\'' + image + '\')' %>">
-
+    <div class="cocktail-image">
+      <%= cl_image_tag(@cocktail.photo,
+            width: 400, height: 300, crop: :fill) %>
     </div>
-    <div class="how">
+<!--     <div class="how"> -->
       <ul id="otis">
       <% @cocktail.doses.each do |dose| %>
         <li>
@@ -33,6 +30,7 @@
       <%= link_to "Delete", cocktail_path(@cocktail),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+      <%= link_to "Go Home", cocktails_path  %>
     </div>
   </div>
 </div>

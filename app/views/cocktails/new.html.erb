@@ -17,6 +17,8 @@
         <%= f.input :name %>
         <%= f.input :catch_phrase %>
         <%= f.input :price %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
         <%= f.association :bar  %>
         <%= f.submit "Let's Shake!", class: "btn btn-primary" %>
       <% end %>
