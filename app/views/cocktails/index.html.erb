@@ -1,7 +1,7 @@
 <% @hello = ["one.jpeg", "two.jpeg", "three.jpeg", "four.jpeg", "five.jpeg", "six.jpeg", "seven.jpeg", "eight.jpeg", "nine.jpeg", "ten.jpeg", "eleven.jpeg", "twelve.jpeg", "thirteen.jpeg", "fourteen.jpeg" ] %>
 
 <% @heads = ["DenverST", "forresty", "Filipe-p", "ssaunier", "kentokedo", "deepneuralai", "Dcarg", "bondichi"] %>
-<% @messages = ["Summer Fun", "Refresher", "Fruity Fun", "Citrus Burst", "Modern Classic", "Sophisticated Style", "Old Fashioned Favourite"] %>
+
 <% @bars = ["Bob's Bar", "Bricka", "Corner Hotel", "Steve's", "Imperial Rooftop", "Richmond Hotel", "Stone Hotel", "Varnish"] %>
 
 
@@ -15,10 +15,20 @@
               <div class="card-category"><%= @bars.sample %></div>
               <div class="card-description">
                 <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-                <p><%= @messages.sample %></p>
+                <p><%= cocktail.catch_phrase %></p>
               </div>
-              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/<%= @heads.sample %>">
-    <!--           <a class="card-link" href="#" ></a> -->
+              <div class="card-price">
+                <% if cocktail.price < 15 %>
+                  <i class="fas fa-dollar-sign"></i>
+                <% elsif cocktail.price < 21 %>
+                  <i class="fas fa-dollar-sign"></i>
+                  <i class="fas fa-dollar-sign"></i>
+                <% else %>
+                  <i class="fas fa-dollar-sign"></i>
+                  <i class="fas fa-dollar-sign"></i>
+                  <i class="fas fa-dollar-sign"></i>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end  %>
