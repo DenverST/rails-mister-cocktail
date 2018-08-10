@@ -7,11 +7,19 @@
           <h3>
             <%= link_to bar.name, bar_path(bar) %>
           </h3>
+          <ul id="otis">
+            <% bar.cocktails.each do |cocktail|  %>
+            <li>
+              <p> <%= cocktail.name %></p>
+            </li>
+            <% end %>
+          </ul>
         </li>
         <% end %>
         <li>
           <h4>
             <%= link_to "Add Bar", new_bar_path %>
+            <%= link_to "Return Back", cocktails_path %>
           </h4>
         </li>
       </ul>

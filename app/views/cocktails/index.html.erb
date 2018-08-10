@@ -7,7 +7,7 @@
           <% image = asset_url(@hello.sample) %>
           <div class="col-xs-12 col-sm-4">
             <div class="card" style="<%= 'background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(\'' + image + '\')' %>">
-              <div class="card-category"><%= cocktail.bar.name %></div>
+              <div class="card-category"><%= link_to cocktail.bar.name, bar_path(cocktail.bar) %></div>
               <div class="card-description">
                 <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
                 <p><%= cocktail.catch_phrase %></p>

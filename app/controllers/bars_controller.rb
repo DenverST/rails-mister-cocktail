@@ -13,7 +13,7 @@ class BarsController < ApplicationController
   end
 
   def create
-    @bar = Cocktail.new(bar_params)
+    @bar = Bar.new(bar_params)
     if @bar.save
       redirect_to bar_path(@bar)
     else
