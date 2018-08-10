@@ -1,0 +1,22 @@
+<div class="who">
+  <div class="when">
+    <div class="how">
+      <h3>Nice, a new bar!</h3>
+
+      <%= simple_form_for(@bar) do |f| %>
+        <% if @bar.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @bar.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <%= f.input :name %>
+        <%= f.submit "Let's Go Now!", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

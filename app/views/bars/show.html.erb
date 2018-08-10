@@ -1,0 +1,28 @@
+<div class="who">
+  <div class="when">
+
+    <div class="how">
+      <ul id="otis">
+      <% @bar.cocktails.each do |cocktail| %>
+        <li>
+          <h3>
+            <%= cocktail.name %>
+          </h3>
+          <ul>
+            <% cocktail.doses.each do |dose| %>
+              <li>
+                <%= dose.description  %>
+                <%= dose.ingredient.name %>
+              </li>
+            <% end  %>
+          </ul>
+        </li>
+      <% end %>
+        <li>
+          <%=  link_to "Add Cocktail", new_bar_cocktail_path(@bar) %>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>

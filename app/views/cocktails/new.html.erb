@@ -1,22 +1,25 @@
 <div class="who">
   <div class="when">
-    <h3>Let's add a new cocktail!</h3>
+    <div class="how">
+      <h3>Let's add a new cocktail!</h3>
 
-    <%= simple_form_for(@cocktail) do |f| %>
-      <% if @cocktail.errors.any? %>
-        <div class="errors-container">
-          <ul>
-            <% @cocktail.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
+      <%= simple_form_for(@cocktail) do |f| %>
+        <% if @cocktail.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @cocktail.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <%= f.input :name %>
+        <%= f.input :catch_phrase %>
+        <%= f.input :price %>
+        <%= f.association :bar  %>
+        <%= f.submit "Let's Shake!", class: "btn btn-primary" %>
       <% end %>
-
-      <%= f.input :name %>
-      <%= f.input :catch_phrase %>
-      <%= f.input :price %>
-      <%= f.submit "Let's Shake!", class: "btn btn-primary" %>
-    <% end %>
+    </div>
   </div>
 </div>
