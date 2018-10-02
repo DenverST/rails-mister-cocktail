@@ -3,7 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .banner {
   display: flex;
-  justfy-content: space-around;
+  justify-content: space-around;
+  background-image: url('https://res.cloudinary.com/dhzjlnjsk/image/upload/v1533877376/bannerthree.jpg');
+  background-size: cover;
+  height: 61vh;
+  width: 100%;
 }
 
 .links {
