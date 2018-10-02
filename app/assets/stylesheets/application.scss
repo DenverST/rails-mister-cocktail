@@ -50,4 +50,6 @@
 ul#otis {
   list-style-type: none;
   text-align: left;
+  max-height: 80vh;
+  overflow-y:scroll;
 }
